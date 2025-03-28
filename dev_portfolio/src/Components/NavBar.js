@@ -50,14 +50,14 @@ const NavLink = ({ number, text, path }) => {
 
     return (
         <Link 
-        to={path} 
-        className={`nav-link ${isActive ? 'active' : ''}`}
-        onMouseOver={handleMouseOver}
-        >
-        <span className="nav-number" ref={numberRef}>{number}.</span>
-        <span className="nav-text" ref={textRef}>{text}</span>
-        </Link>
-    );
+            to={path} 
+            className={`nav-link ${isActive ? 'active' : ''}`}
+            onMouseOver={handleMouseOver}
+            >
+            <span className="nav-number" ref={numberRef}>{number}</span>.
+            <span className="nav-text" ref={textRef}>{text}</span>
+            </Link>
+        );
     };
 
     export function Navbar() {
@@ -65,7 +65,7 @@ const NavLink = ({ number, text, path }) => {
         <nav className="navbar">
         <div className="nav-left">
             <Link to="/" className="logo-link">
-            {/* Replace with your actual logo */}
+            {/* TODO: Replace with your actual logo */}
             <span className="logo">LOGO</span>
             </Link>
         </div>

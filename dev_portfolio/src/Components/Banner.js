@@ -25,7 +25,7 @@ export function Banner() {
             </div>
         </div>
         <div className="banner-graphic">
-            {/* TODO: Placeholder for your illustration */}
+            {/* TODO: Add an image that speaks states your mission in life */}
             <div className="graphic-placeholder"></div>
         </div>
         </section>

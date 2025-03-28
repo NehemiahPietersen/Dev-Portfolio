@@ -24,6 +24,7 @@ export function AboutPage() {
                             </p>
                         </div>
 
+                        {/* TODO: Make the about me information a little longer */}
                         <div className="about-details">
                             <div className="journey-section">
                                 <h3 className="section-heading">
@@ -62,18 +63,19 @@ export function AboutPage() {
 
                     <div className="about-image-content">
                         <div className="profile-image-placeholder">
-                            {/* Placeholder image - you can replace with your actual image */}
-                            <div className="placeholder-image"></div>
+                            <div className="placeholder-image">
+                                {/* TODO: Add Profile image of yourself Nehemiah */}
+                            </div>
                             <div className="social-links">
                                 <p className="social-links-text">Connect with me:</p>
                                 <div className="social-icons">
-                                    <a href="https://linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="social-link">
+                                    <a href="https://linkedin.com/in/nehemiah-pietersen-17a724170" target="_blank" rel="noopener noreferrer" className="social-link">
                                         <FaLinkedin className="social-icon" /> LinkedIn
                                     </a>
-                                    <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="social-link">
+                                    <a href="https://github.com/NehemiahPietersen" target="_blank" rel="noopener noreferrer" className="social-link">
                                         <FaGithub className="social-icon" /> GitHub
                                     </a>
-                                    <a href="https://discord.com/users/yourid" target="_blank" rel="noopener noreferrer" className="social-link">
+                                    <a href="https://discord.com/users/2526" target="_blank" rel="noopener noreferrer" className="social-link">
                                         <FaDiscord className="social-icon" /> Discord
                                     </a>
                                 </div>

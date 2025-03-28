@@ -39,7 +39,7 @@ export function ProjectDetail() {
             <div className="tech-stack-section">
                 <h2 className="section-heading">Technologies Used</h2>
                 <div className="tech-stack">
-                    {project.technologies.map((tech, i) => (
+                    {project.techStack.map((tech, i) => (
                         <span key={i} className="tech-item">{tech}</span>
                     ))}
                 </div>

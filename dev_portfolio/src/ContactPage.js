@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
 import './styles/Contact.css';
 
-export function ContactPage () {
+export function ContactPage() {
     const [formData, setFormData] = useState({
         name: '',
         email: '',
@@ -15,14 +16,9 @@ export function ContactPage () {
     const handleChange = (e) => {
         const { name, value } = e.target;
         setFormData({
-        ...formData,
-        [name]: value
+            ...formData,
+            [name]: value
         });
-    };
-
-    const validateEmail = (email) => {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        return re.test(email);
     };
 
     const validateForm = () => {
@@ -30,24 +26,21 @@ export function ContactPage () {
         const newErrors = {};
 
         if (!formData.name.trim()) {
-        newErrors.name = 'Name is required';
-        valid = false;
+            newErrors.name = 'Name is required';
+            valid = false;
         }
 
         if (!formData.email.trim()) {
-        newErrors.email = 'Email is required';
-        valid = false;
-        } else if (!validateEmail(formData.email)) {
-        newErrors.email = 'Please enter a valid email address';
-        valid = false;
+            newErrors.email = 'Email is required';
+            valid = false;
+        } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+            newErrors.email = 'Please enter a valid email';
+            valid = false;
         }
 
         if (!formData.message.trim()) {
-        newErrors.message = 'Message is required';
-        valid = false;
-        } else if (formData.message.length < 10) {
-        newErrors.message = 'Message should be at least 10 characters';
-        valid = false;
+            newErrors.message = 'Message is required';
+            valid = false;
         }
 
         setErrors(newErrors);
@@ -57,26 +50,30 @@ export function ContactPage () {
     const handleSubmit = (e) => {
         e.preventDefault();
         
-        if (validateForm()) {
+        if (!validateForm()) return;
+
         setIsSubmitting(true);
-        
-        // Simulate API call
-        setTimeout(() => {
-            console.log('Form submitted:', formData);
-            setIsSubmitting(false);
+
+        const serviceId = 'service_dev_page';
+        const templateId = 'template_ekzgypn';
+        const userId = 'KMkv83-493_Sf5RJT';
+
+        emailjs.send(serviceId, templateId, {
+            name: formData.name,
+            email: formData.email,
+            message: formData.message
+        }, userId)
+        .then(() => {
             setSubmitSuccess(true);
-            setFormData({
-            name: '',
-            email: '',
-            message: ''
-            });
-            
-            // Hide success message after 5 seconds
-            setTimeout(() => {
-            setSubmitSuccess(false);
-            }, 5000);
-        }, 1500);
-        }
+            setFormData({ name: '', email: '', message: '' });
+        })
+        .catch((error) => {
+            console.error('Failed to send:', error);
+            setErrors({ ...errors, form: 'Failed to send. Please try again later.' });
+        })
+        .finally(() => {
+            setIsSubmitting(false);
+        });
     };
 
     return (
@@ -85,60 +82,62 @@ export function ContactPage () {
                 <h1 className="contact-heading">Send me an email</h1>
                 
                 {submitSuccess && (
-                <div className="contact-success-message">
-                    Thank you for your message! I'll get back to you soon.
-                </div>
+                    <div className="contact-success-message">
+                        Message sent successfully! I'll reply soon.
+                    </div>
                 )}
-        
-        <form onSubmit={handleSubmit} className="contact-form">
-            <div className="contact-form-group">
-            <label htmlFor="name" className="contact-label">Name*</label>
-            <input
-                type="text"
-                id="name"
-                name="name"
-                value={formData.name}
-                onChange={handleChange}
-                className="contact-input"
-            />
-            {errors.name && <span className="contact-error">{errors.name}</span>}
+
+                <form onSubmit={handleSubmit} className="contact-form">
+                    <div className="contact-form-group">
+                        <label htmlFor="name" className="contact-label">Name*</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleChange}
+                            className="contact-input"
+                        />
+                        {errors.name && <span className="contact-error">{errors.name}</span>}
+                    </div>
+                    
+                    <div className="contact-form-group">
+                        <label htmlFor="email" className="contact-label">Email*</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                            className="contact-input"
+                        />
+                        {errors.email && <span className="contact-error">{errors.email}</span>}
+                    </div>
+                    
+                    <div className="contact-form-group">
+                        <label htmlFor="message" className="contact-label">Message*</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            value={formData.message}
+                            onChange={handleChange}
+                            rows="5"
+                            className="contact-textarea"
+                        />
+                        {errors.message && <span className="contact-error">{errors.message}</span>}
+                    </div>
+                    
+                    {errors.form && <div className="contact-form-error">{errors.form}</div>}
+                    
+                    <button
+                        type="submit"
+                        disabled={isSubmitting}
+                        className="contact-button"
+                    >
+                        {isSubmitting ? 'Sending...' : 'Send Message'}
+                    </button>
+                </form>
             </div>
-            
-            <div className="contact-form-group">
-            <label htmlFor="email" className="contact-label">Email*</label>
-            <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                className="contact-input"
-            />
-            {errors.email && <span className="contact-error">{errors.email}</span>}
-            </div>
-            
-            <div className="contact-form-group">
-            <label htmlFor="message" className="contact-label">Message*</label>
-            <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                rows="5"
-                className="contact-textarea"
-            />
-            {errors.message && <span className="contact-error">{errors.message}</span>}
-            </div>
-            
-            <button
-            type="submit"
-            disabled={isSubmitting}
-            className={isSubmitting ? "contact-button contact-button-disabled" : "contact-button"}
-            >
-            {isSubmitting ? 'Sending...' : 'Send Message'}
-            </button>
-        </form>
-        </div>
         </div>
     );
-};
+}

@@ -7,6 +7,7 @@ export const projects = [
         detailedDescription: "This is the full detailed description of Ariksha's Garden project...", //TODO Add more information here
         tags: ["React", "Node.js", "MongoDB", "GitHub"],
         technologies: ["Node.js", "Express.js", "Android Development", "MongoDB"],
+        techStack: ["Java", "JavaScript", "GitHub", "Postman", "Trello", "Node.js", "Express.js", "Android Development", "MongoDB"],
         images: [],
         link: "#"
     },
@@ -18,6 +19,7 @@ export const projects = [
         detailedDescription: "This is the full detailed description of DFM Technologies project...", //TODO Add more information here
         tags: ["JavaScript", "Android Development", "Responsive Design"],
         technologies: ["Android Development", "Swift", "RealmDB"],
+        techStack: ["C#", "GitHub", "Postman", "ASP.Net", "Android Development", "MySQL"],
         link: "#"
     },
     {
@@ -28,6 +30,7 @@ export const projects = [
         detailedDescription: "This is the full detailed description of Budget Application project...", //TODO Add more information here
         tags: ["Spring", "Android Development", "Java", "MySQL"],
         technologies: ["Spring Boot", "Spring Framework", "Java", "MySQL"],
+        techStack: ["GitHub", "??", "Spring", "Android Development", "MySQL"],
         link: "#"
     }
 ];

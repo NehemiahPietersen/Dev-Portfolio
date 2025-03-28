@@ -1,0 +1,182 @@
+:root {
+    --dark-blue: #243249;
+    --text-primary: #4ddba3;
+    --text-hover: #ffffff;
+    --accent-blue: #3a86ff;
+    --accent-teal: #64ffda;
+    --bg-dark: #0a192f;
+    --text-grey-primary: #e6f1ff;
+    --text-secondary: #8892b0;
+    --accent: #4ddba3;
+    --card-bg: #112240;
+    --tag-bg: rgba(100, 255, 218, 0.1);
+}
+
+.experience-container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--text-grey-primary);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+    background-color: var(--bg-dark);
+}
+
+.experience-container h1 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+    font-size: 2.5rem;
+    position: relative;
+    color: var(--text-primary);
+}
+
+.experience-container h1::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 4px;
+    background: var(--accent);
+    margin: 1rem auto;
+}
+
+.experience-container h2 {
+    margin-top: 3rem;
+    font-size: 2rem;
+    border-bottom: 2px solid var(--accent);
+    padding-bottom: 0.5rem;
+    display: inline-block;
+    color: var(--text-primary);
+}
+
+.experience-section, .projects-section {
+    background: var(--card-bg);
+    border-radius: 8px;
+    box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+    border: 1px solid rgba(100, 255, 218, 0.1);
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+}
+
+.experience-section:hover, .projects-section:hover {
+    transform: translateY(-5px);
+    border: 1px solid var(--accent-teal);
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.experience-item {
+    background: var(--dark-blue);
+    padding: 1.5rem;
+    border-radius: 6px;
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    border: 1px solid rgba(100, 255, 218, 0.1);
+}
+
+.experience-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+    border: 1px solid var(--accent-teal);
+}
+
+.experience-item h3 {
+    color: var(--text-primary);
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.experience-item h3::before {
+    content: '▹';
+    color: var(--accent-teal);
+    margin-right: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.experience-item ul {
+    padding-left: 1.2rem;
+}
+
+.experience-item li {
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+}
+
+.experience-item li:hover {
+    color: var(--text-hover);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 1.5rem;
+}
+
+.project-card {
+    border: 1px solid rgba(100, 255, 218, 0.1);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: all 0.25s cubic-bezier(0.645, 0.045, 0.355, 1);
+    background: var(--card-bg);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
+    border: 1px solid var(--accent-teal);
+}
+
+.project-card h3 {
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+}
+
+.project-card p {
+    color: var(--text-secondary);
+    margin-bottom: 1.5rem;
+}
+
+.project-card:hover p {
+    color: var(--text-hover);
+}
+
+.tech-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.tech-tag {
+    background: var(--tag-bg);
+    color: var(--accent-teal);
+    padding: 0.3rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    font-family: 'SF Mono', 'Fira Code', 'Fira Mono', 'Roboto Mono', monospace;
+}
+
+@media (max-width: 768px) {
+    .experience-grid, .projects-grid {
+    grid-template-columns: 1fr;
+    }
+    
+    .experience-container {
+    padding: 1rem;
+    }
+    
+    .experience-container h1 {
+    font-size: 2rem;
+    }
+    
+    .experience-container h2 {
+    font-size: 1.5rem;
+    }
+}

@@ -222,6 +222,42 @@ body {
   }
 }
 
+.banner-graphic {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.banner-image {
+  max-width: 100%;
+  height: auto;
+  max-height: 400px;
+  /* filter: drop-shadow(0 0 20px rgba(100, 255, 218, 0.3)); */
+  transition: transform 0.3s ease;
+}
+
+/* .banner-image:hover {
+  transform: translateY(-5px);
+} */
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .banner {
+      flex-direction: column;
+  }
+  
+  .banner-graphic {
+      order: -1;
+      padding: 1rem 0 2rem 0;
+  }
+  
+  .banner-image {
+      max-height: 300px;
+  }
+}
+
 /* ---SkillsStyles */
 .skills-section {
   padding: 5rem 10%;

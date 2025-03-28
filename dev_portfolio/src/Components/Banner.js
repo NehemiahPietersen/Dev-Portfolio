@@ -1,5 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
+import splashImage from '../assets/img/SplashImage5.jpg';
 
 export function Banner() {
     const navigate = useNavigate();
@@ -25,8 +26,11 @@ export function Banner() {
             </div>
         </div>
         <div className="banner-graphic">
-            {/* TODO: Add an image that speaks states your mission in life */}
-            <div className="graphic-placeholder"></div>
+            <img 
+                        src={splashImage} 
+                        alt="Digital creator at work" 
+                        className="banner-image"
+                    />
         </div>
         </section>
     );

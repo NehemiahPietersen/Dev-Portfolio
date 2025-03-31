@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { projects } from '../data/Projects';
 import '../styles/ProjectDetails.css';
@@ -7,6 +7,12 @@ export function ProjectDetail() {
     const { projectId } = useParams();
     const navigate = useNavigate();
     const project = projects.find(p => p.id === projectId);
+
+    // Add this effect
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, [projectId]); // Re-run when projectId changes
+
 
     if (!project) {
         return (

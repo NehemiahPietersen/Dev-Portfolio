@@ -238,10 +238,6 @@ body {
   transition: transform 0.3s ease;
 }
 
-/* .banner-image:hover {
-  transform: translateY(-5px);
-} */
-
 /* Responsive adjustments */
 @media (max-width: 768px) {
   .banner {

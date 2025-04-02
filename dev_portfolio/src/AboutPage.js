@@ -65,8 +65,12 @@ export function AboutPage() {
                                             <p>
                                                 My academic journey immersed me in the full spectrum of modern software development—from system architecture and 
                                                 cybersecurity best practices to agile methodologies, database design, and the nuanced art of coding across multiple 
-                                                frameworks and languages. It was here that I discovered my passion for Java, captivated by its versatility, 
-                                                robustness, and elegance in solving real-world problems.
+                                                frameworks and languages. It was here that I discovered my passion for Java, captivated by its versatility, robustness, 
+                                                and elegance in solving real-world problems. Beyond theory, I’ve honed these skills through hands-on experience, 
+                                                blending academic rigor with practical execution. Today, I bring a dynamic toolkit to every project: a deep understanding 
+                                                of development lifecycles, a security-first mindset, and the ability to adapt cutting-edge technologies to deliver 
+                                                scalable, efficient solutions. Whether crafting intuitive applications or optimizing backend systems, I thrive on 
+                                                transforming challenges into opportunities.
                                             </p>
                                         </div>
                                     </div>
@@ -75,10 +79,12 @@ export function AboutPage() {
                                         <div className="timeline-content">
                                             <h4>Continuous Learning</h4>
                                             <p>
-                                                I thrive on growth—not just in theory, but in practice. My passion for software development and project management 
-                                                is fuelled by relentless learning, proven by the certifications I've earned and the skills I've deployed in real-world 
-                                                projects. Recently, I completed an intensive Spring Boot course, immediately applying its principles to streamline 
-                                                backend systems in my work. Now, I'm turning my focus to AWS certification, with a clear roadmap to mastery.
+                                            I thrive on growth not just in theory, but in practice. My passion for software development and project management 
+                                            is fuelled by relentless learning, proven by the certifications I’ve earned and the skills I’ve deployed in real-world 
+                                            projects. Recently, I completed an intensive Spring Boot course, immediately applying its principles to streamline 
+                                            backend systems in my work. Now, I’m turning my focus to AWS certification, with a clear roadmap to mastery: hands-on 
+                                            labs, cloud architecture projects, and iterative testing. For me, education isn’t just about credentials; it’s about 
+                                            unlocking new ways to build faster, smarter solutions—and I’m already putting the next one in motion.
                                             </p>
                                         </div>
                                     </div>

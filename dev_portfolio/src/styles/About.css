@@ -212,13 +212,13 @@
 }
 
 /* Gradient title effect */
-.title-gradient {
+/* .title-gradient {
     background: linear-gradient(90deg, #4ddba3, #64ffda);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
     display: inline-block;
-}
+} */
 
 .title-decoration {
     width: 80px;

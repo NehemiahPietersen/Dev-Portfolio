@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FaDatabase, FaServer, FaLaptopCode, FaReact, FaJava, FaNodeJs } from 'react-icons/fa';
 import { SiSpring, SiDotnet, SiJavascript, SiHtml5, SiCss3, SiOracle, SiFirebase } from 'react-icons/si';
 import './styles/Skills.css';
 
 export function SkillsPage() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <div className="detailed-skills-page">
             <h1>My Technical Skills</h1>

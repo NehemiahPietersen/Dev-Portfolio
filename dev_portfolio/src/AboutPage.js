@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { FaLinkedin, FaGithub, FaDiscord, FaCoffee, FaBiking, FaLock, FaCode, FaServer } from 'react-icons/fa';
 import './styles/About.css';
 
 export function AboutPage() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     return (
         <section className="about-page">
             <div className="about-container">

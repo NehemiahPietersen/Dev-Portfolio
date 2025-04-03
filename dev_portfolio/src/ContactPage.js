@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
 import './styles/Contact.css';
 
@@ -8,6 +8,10 @@ export function ContactPage() {
         email: '',
         message: ''
     });
+
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
 
     const [errors, setErrors] = useState({});
     const [isSubmitting, setIsSubmitting] = useState(false);

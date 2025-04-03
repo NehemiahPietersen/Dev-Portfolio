@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { projects } from './data/Projects';
 import './styles/Experience.css';
 
 export function ExperiencePage() {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+    
     return (
         <div className="experience-container">
             <h1>Experience</h1>
